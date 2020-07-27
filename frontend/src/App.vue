@@ -1,12 +1,30 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <header class="app-header">
+      <Nav />
+    </header>
+    <div class="app-content">
+      <main class="container">
+        <router-view />
+      </main>
     </div>
-    <router-view/>
+    <div class="app-footer">
+      <div class="container">
+        <hr >
+        <p class="small text-muted">Все права защищены</p>
+      </div>
+    </div>
   </div>
 </template>
+
+<script>
+  import Nav from "@/components/Nav";
+  export default {
+    components: {
+      Nav
+    }
+  }
+</script>
 
 <style>
 #app {
