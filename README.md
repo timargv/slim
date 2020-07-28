@@ -37,3 +37,27 @@ ____________________________
 
 docker-compose exec frontend-nodejs npm run watch
 
+____________________________
+
+######Frontend Создание .env файла 
+
+docker-compose exec frontend-nodejs rm -f .env.local
+
+docker-compose exec frontend-nodejs ln -sr .env.local.example .env.local
+
+____________________________
+
+
+######API Для запуска composer
+
+docker-compose exec api-php-cli composer
+
+____________________________
+
+######API Для запуска composer
+
+docker-compose exec api-php-cli rm -f .env
+
+docker-compose exec api-php-cli ln -sr .env.example .env
+
+____________________________

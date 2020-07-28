@@ -9,7 +9,7 @@
 
 <script>
 // @ is an alias to /src
-import ApiStatus from '@/components/ApiStatus.vue'
+import ApiStatus from '@/components/ApiStatus'
 
 export default {
   name: 'Home',
