@@ -5,4 +5,9 @@ RUN apt-get update -y && \
     pecl install mcrypt-1.0.2 && \
     docker-php-ext-enable mcrypt
 
+RUN apt-get update -y && \
+    apt-get install -y libpq-dev && \
+    docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql && \
+    docker-php-ext-install pdo_pgsql pgsql
+
 WORKDIR /var/www/api

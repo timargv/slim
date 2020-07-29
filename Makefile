@@ -19,6 +19,9 @@ api-composer:
 api-migration:
 	docker-compose exec api-php-cli composer app migrations:migrate
 
+api-tests:
+	docker-compose exec api-php-cli composer test
+
 frontend-env:
 	docker-compose exec frontend-nodejs rm -f .env.local
 	docker-compose exec frontend-nodejs ln -sr .env.local.example .env.local
@@ -28,3 +31,6 @@ frontend-install:
 
 frontend-build:
 	docker-compose exec frontend-nodejs npm run build
+
+frontend-watch:
+	docker-compose exec frontend-nodejs npm run watch

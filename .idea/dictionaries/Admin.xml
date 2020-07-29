@@ -2,6 +2,10 @@
   <dictionary name="Admin">
     <words>
       <w>axios</w>
+      <w>diactoros</w>
+      <w>dotenv</w>
+      <w>hasher</w>
+      <w>laminas</w>
       <w>signup</w>
     </words>
   </dictionary>
