@@ -34,7 +34,7 @@ class Handler
         $this->flusher = $flusher;
     }
 
-    public function handler(Command $command): void
+    public function handle(Command $command): void
     {
         $email = new Email($command->email);
 
@@ -53,5 +53,7 @@ class Handler
         $this->users->add($user);
         $this->flusher->flush();
     }
+
+
 
 }

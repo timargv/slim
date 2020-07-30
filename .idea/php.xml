@@ -14,7 +14,6 @@
       <path value="$PROJECT_DIR$/api/vendor/symfony/polyfill-php80" />
       <path value="$PROJECT_DIR$/api/vendor/symfony/polyfill-ctype" />
       <path value="$PROJECT_DIR$/api/vendor/symfony/polyfill-mbstring" />
-      <path value="$PROJECT_DIR$/api/vendor/symfony/deprecation-contracts" />
       <path value="$PROJECT_DIR$/api/vendor/symfony/dotenv" />
       <path value="$PROJECT_DIR$/api/vendor/laminas/laminas-zendframework-bridge" />
       <path value="$PROJECT_DIR$/api/vendor/symfony/console" />
@@ -23,19 +22,6 @@
       <path value="$PROJECT_DIR$/api/vendor/psr/container" />
       <path value="$PROJECT_DIR$/api/vendor/brick/math" />
       <path value="$PROJECT_DIR$/api/vendor/nikic/fast-route" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/reflection" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/orm" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/persistence" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/lexer" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/migrations" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/inflector" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/instantiator" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/dbal" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/event-manager" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/collections" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/common" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/annotations" />
-      <path value="$PROJECT_DIR$/api/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/api/vendor/psr/http-factory" />
       <path value="$PROJECT_DIR$/api/vendor/psr/http-message" />
       <path value="$PROJECT_DIR$/api/vendor/phar-io/manifest" />
@@ -48,7 +34,6 @@
       <path value="$PROJECT_DIR$/api/vendor/phpdocumentor/reflection-docblock" />
       <path value="$PROJECT_DIR$/api/vendor/sebastian/version" />
       <path value="$PROJECT_DIR$/api/vendor/sebastian/resource-operations" />
-      <path value="$PROJECT_DIR$/api/vendor/sebastian/type" />
       <path value="$PROJECT_DIR$/api/vendor/sebastian/object-reflector" />
       <path value="$PROJECT_DIR$/api/vendor/sebastian/recursion-context" />
       <path value="$PROJECT_DIR$/api/vendor/sebastian/global-state" />
@@ -58,7 +43,6 @@
       <path value="$PROJECT_DIR$/api/vendor/sebastian/exporter" />
       <path value="$PROJECT_DIR$/api/vendor/sebastian/comparator" />
       <path value="$PROJECT_DIR$/api/vendor/sebastian/diff" />
-      <path value="$PROJECT_DIR$/api/vendor/sebastian/code-unit" />
       <path value="$PROJECT_DIR$/api/vendor/sebastian/code-unit-reverse-lookup" />
       <path value="$PROJECT_DIR$/api/vendor/slim/slim" />
       <path value="$PROJECT_DIR$/api/vendor/laminas/laminas-diactoros" />
@@ -67,12 +51,28 @@
       <path value="$PROJECT_DIR$/api/vendor/phpunit/php-text-template" />
       <path value="$PROJECT_DIR$/api/vendor/phpunit/php-timer" />
       <path value="$PROJECT_DIR$/api/vendor/phpunit/php-file-iterator" />
-      <path value="$PROJECT_DIR$/api/vendor/phpunit/php-invoker" />
       <path value="$PROJECT_DIR$/api/vendor/phpspec/prophecy" />
       <path value="$PROJECT_DIR$/api/vendor/theseer/tokenizer" />
       <path value="$PROJECT_DIR$/api/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/api/vendor/symfony/translation-contracts" />
       <path value="$PROJECT_DIR$/api/vendor/symfony/validator" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/orm" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/persistence" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/lexer" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/reflection" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/common" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/annotations" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/instantiator" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/migrations" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/collections" />
+      <path value="$PROJECT_DIR$/api/vendor/doctrine/data-fixtures" />
+      <path value="$PROJECT_DIR$/api/vendor/sebastian/type" />
+      <path value="$PROJECT_DIR$/api/vendor/phpunit/php-invoker" />
+      <path value="$PROJECT_DIR$/api/vendor/sebastian/code-unit" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

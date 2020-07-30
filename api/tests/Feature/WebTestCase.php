@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace Api\Test\Feature;
 
+use Doctrine\Common\DataFixtures\Executor\ORMExecutor;
+use Doctrine\Common\DataFixtures\Loader;
+use Doctrine\Common\DataFixtures\Purger\ORMPurger;
+use Doctrine\ORM\EntityManagerInterface;
 use Laminas\Diactoros\Stream;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
@@ -16,6 +20,8 @@ use Laminas\Diactoros\Uri;
 
 class WebTestCase extends TestCase
 {
+    private $fixtures = [];
+
     protected function get(string $uri) : ResponseInterface
     {
         return $this->method($uri, 'GET');
@@ -49,12 +55,37 @@ class WebTestCase extends TestCase
         return $response;
     }
 
-
-    private function app() : App
+    protected function loadFixtures(array $fixtures): void
     {
         $container = $this->container();
-        $app = new \Slim\App($container);
-        (require 'config/routes.php')($app);
+        $em = $container->get(EntityManagerInterface::class);
+        $loader = new Loader();
+        foreach ($fixtures as $name => $class) {
+            if ($container->has($class)) {
+                $fixture = $container->get($class);
+            } else {
+                $fixture = new $class;
+            }
+            $loader->addFixture($fixture);
+            $this->fixtures[$name] = $fixture;
+        }
+        $executor = new ORMExecutor($em, new ORMPurger($em));
+        $executor->execute($loader->getFixtures());
+    }
+
+    protected function getFixture($name)
+    {
+        if (!array_key_exists($name, $this->fixtures)) {
+            throw new \InvalidArgumentException('Undefined fixture ' . $name);
+        }
+        return $this->fixtures[$name];
+    }
+
+    private function app(): App
+    {
+        $container = $this->container();
+        $app = new App($container);
+        (require 'config/routes.php')($app, $container);
         return $app;
     }
 
