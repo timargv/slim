@@ -8,31 +8,29 @@ use Doctrine\Common\DataFixtures\Executor\ORMExecutor;
 use Doctrine\Common\DataFixtures\Loader;
 use Doctrine\Common\DataFixtures\Purger\ORMPurger;
 use Doctrine\ORM\EntityManagerInterface;
-use Laminas\Diactoros\Stream;
 use PHPUnit\Framework\TestCase;
 use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\App;
-use Laminas\Diactoros\Response;
-use Laminas\Diactoros\ServerRequest;
-use Laminas\Diactoros\Uri;
+use Zend\Diactoros\Response;
+use Zend\Diactoros\ServerRequest;
+use Zend\Diactoros\Stream;
+use Zend\Diactoros\Uri;
 
 class WebTestCase extends TestCase
 {
-    private $fixtures = [];
-
-    protected function get(string $uri) : ResponseInterface
+    protected function get(string $uri): ResponseInterface
     {
         return $this->method($uri, 'GET');
     }
 
-    public function post(string $uri, array $params = []) : ResponseInterface
+    protected function post(string $uri, array $params = []): ResponseInterface
     {
         return $this->method($uri, 'POST', $params);
     }
 
-    protected function method(string $uri, string $method, array $params = []) : ResponseInterface
+    protected function method(string $uri, $method, array $params = []): ResponseInterface
     {
         $body = new Stream('php://temp', 'r+');
         $body->write(json_encode($params));
@@ -42,7 +40,7 @@ class WebTestCase extends TestCase
             (new ServerRequest())
                 ->withHeader('Content-Type', 'application/json')
                 ->withHeader('Accept', 'application/json')
-                ->withUri(new Uri('http://test', $uri))
+                ->withUri(new Uri('http://test' . $uri))
                 ->withMethod($method)
                 ->withBody($body)
         );
@@ -51,7 +49,7 @@ class WebTestCase extends TestCase
     protected function request(ServerRequestInterface $request): ResponseInterface
     {
         $response = $this->app()->process($request, new Response());
-        $request->getBody()->rewind();
+        $response->getBody()->rewind();
         return $response;
     }
 
@@ -60,25 +58,16 @@ class WebTestCase extends TestCase
         $container = $this->container();
         $em = $container->get(EntityManagerInterface::class);
         $loader = new Loader();
-        foreach ($fixtures as $name => $class) {
+        foreach ($fixtures as $class) {
             if ($container->has($class)) {
                 $fixture = $container->get($class);
             } else {
                 $fixture = new $class;
             }
             $loader->addFixture($fixture);
-            $this->fixtures[$name] = $fixture;
         }
         $executor = new ORMExecutor($em, new ORMPurger($em));
         $executor->execute($loader->getFixtures());
-    }
-
-    protected function getFixture($name)
-    {
-        if (!array_key_exists($name, $this->fixtures)) {
-            throw new \InvalidArgumentException('Undefined fixture ' . $name);
-        }
-        return $this->fixtures[$name];
     }
 
     private function app(): App
@@ -89,9 +78,8 @@ class WebTestCase extends TestCase
         return $app;
     }
 
-    private function container() : ContainerInterface
+    private function container(): ContainerInterface
     {
         return require 'config/container.php';
     }
-
 }

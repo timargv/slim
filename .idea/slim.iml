@@ -22,8 +22,6 @@
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/doctrine/orm" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/doctrine/persistence" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/doctrine/reflection" />
-      <excludeFolder url="file://$MODULE_DIR$/api/vendor/laminas/laminas-diactoros" />
-      <excludeFolder url="file://$MODULE_DIR$/api/vendor/laminas/laminas-zendframework-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/myclabs/deep-copy" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/nikic/fast-route" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/ocramius/package-versions" />
@@ -46,6 +44,7 @@
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/psr/http-factory" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/psr/http-message" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/psr/http-server-handler" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/psr/http-server-middleware" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/ramsey/collection" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/ramsey/uuid" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/sebastian/code-unit" />
@@ -75,6 +74,7 @@
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/zendframework/zend-code" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/zendframework/zend-config-aggregator" />
+      <excludeFolder url="file://$MODULE_DIR$/api/vendor/zendframework/zend-diactoros" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/zendframework/zend-eventmanager" />
       <excludeFolder url="file://$MODULE_DIR$/api/vendor/zendframework/zend-stdlib" />
     </content>
