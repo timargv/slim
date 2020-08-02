@@ -11,9 +11,9 @@ if (file_exists('.env')) {
     (new Dotenv())->load('.env');
 }
 
-(function() {
+(function () {
     $container = require 'config/container.php';
     $app = new \Slim\App($container);
-    (require 'config/routes.php')($app);
+    (require 'config/routes.php')($app, $container);
     $app->run();
 })();

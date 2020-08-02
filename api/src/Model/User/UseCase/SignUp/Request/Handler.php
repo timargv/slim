@@ -39,7 +39,7 @@ class Handler
         $email = new Email($command->email);
 
         if ($this->users->hasByEmail($email)) {
-            throw new \DomainException('Пользователь с таким email уже есть.');
+            throw new \DomainException('User with this email already exists.');
         }
 
         $user = new User(
@@ -53,7 +53,4 @@ class Handler
         $this->users->add($user);
         $this->flusher->flush();
     }
-
-
-
 }

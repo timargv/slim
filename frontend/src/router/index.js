@@ -23,7 +23,7 @@ Vue.use(VueRouter)
   {
     path: '/signup',
     name: 'SignUp',
-    component: () => import('../views/SignUp.vue')
+    component: () => import('../views/SignUp/Request')
   }
 ]
 
